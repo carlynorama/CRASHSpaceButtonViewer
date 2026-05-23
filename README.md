@@ -4,11 +4,15 @@
 
 This is a demo project that fetches the current status of the CRASHSpace button and displays it in a web page.
 
-|-- EACH BRANCH IS ANOTHER STEP IN THE PROCESS. --|
-
 A person loading this page should be able to tell at a glance if the space is open, and if so, how much longer it will be open. 
 
 DEMO: https://carlynorama.github.io/CRASHSpaceButtonViewer/
+
+|-- EACH BRANCH IS ANOTHER STEP IN THE PROCESS. --|
+
+Some of the earlier branches failed to test the open condition correctly. 
+
+Changes included fixing the boolean check `if (data.is_open === true) {` and realizing that I wasn't updating the minutes in `var minutes = Math.floor((myInterval % (60 * 24)));`. A reminder of the value of tests and mocks. 
 
 ## Technologies Used
 
