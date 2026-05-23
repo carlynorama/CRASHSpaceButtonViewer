@@ -1,4 +1,7 @@
 let source_url = `https://crashspacela.com/sign/?output=jsonmin`
+let lastRefresh = null
+let lastMinutesLeft = null
+
 
 async function getLatest(callRoute) {
     console.log(callRoute)
@@ -23,10 +26,13 @@ async function getLatest(callRoute) {
     }
 }
 
-function refreshPage(){
+function refreshData(){
     getLatest(source_url).then(data => {
         if (data) {
-            var date = new Date(data.timestamp);
+            lastRefresh = Date.now();
+            lastMinutesLeft = data.minutes_left
+
+            document.getElementById('current_date').innerHTML = lastRefresh
             //it was a choice to name the id's the same as the expected data labels
             //LEARNER GUT CHECK: (data.is_open = true) shows "OPEN" can you explain why?  
             if (data.is_open == "true") {
@@ -35,15 +41,29 @@ function refreshPage(){
                 document.getElementById('is_open').innerHTML = "CLOSED"
             }
             
-            document.getElementById('minutes_left').innerHTML = data.minutes_left
+            document.getElementById('minutes_left_raw').innerHTML = lastMinutesLeft
+            document.getElementById('minutes_left_processed').innerHTML = lastMinutesLeft
         }
     });
+}
+
+
+function updateElapsed() {
+    if (lastRefresh) {
+        var now = new Date().getTime();
+        var minutesSinceRefresh = (now - lastRefresh)/(60000)
+        var newMinutesLeft  = lastMinutesLeft - minutesSinceRefresh
+         document.getElementById('minutes_left_processed').innerHTML = newMinutesLeft
+    } else {
+        document.getElementById('minutes_left_processed').innerHTML = "Waiting..."
+    }
 }
 
 
 //---------------------------------- PAGE STARTS HERE
 window.onload = function() {
     console.log('script called')
-    refreshPage()
+    refreshData();
+    setInterval(updateElapsed, 1000);
 }
 
