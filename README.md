@@ -20,7 +20,7 @@ JavaScript, HTML and (CSS, pending).
 
 ```bash
 # https://realpython.com/python-http-server/
--m http.server 3434
+python3 -m http.server 3434
 ```
 
 Look at it by loading it into a browser or curling it: 
