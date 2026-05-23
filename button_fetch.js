@@ -59,11 +59,15 @@ function updateElapsed() {
     }
 }
 
+//wont work unless time_support is loaded before on the html page. 
+helloSecondJSFile("outside window.onload");
 
 //---------------------------------- PAGE STARTS HERE
 window.onload = function() {
     console.log('script called')
     refreshData();
+    //works no matter the order in the header. 
+    helloSecondJSFile("INSIDE window.onload");
     setInterval(updateElapsed, 1000);
 }
 
