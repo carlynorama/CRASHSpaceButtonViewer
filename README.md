@@ -16,7 +16,7 @@ JavaScript, HTML and (CSS, pending).
 - cd into it
 - launch a server with a command like
 
-```
+```bash
 # https://realpython.com/python-http-server/
 -m http.server 3434
 ```
