@@ -4,6 +4,8 @@
 
 This is a demo project that fetches the current status of the CRASHSpace button and displays it in a web page.
 
+|-- EACH BRANCH IS ANOTHER STEP IN THE PROCESS. --|
+
 A person loading this page should be able to tell at a glance if the space is open, and if so, how much longer it will be open. 
 
 ## Technologies Used
