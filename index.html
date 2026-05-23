@@ -3,11 +3,18 @@
 <head>
     <title>Is it open?</title>
     <meta charset="UTF-8">
+    <script src="time_support.js"></script>
     <script src="button_fetch.js"></script>
+    <!-- KC: Do you know why this include is better before rather than after? -->
+    <!-- <script src="time_support.js"></script> -->
 </head>
 <body>
     <p>Something Is Here</p>
+    <p id="current_date"><p>
     <p id="is_open"></p>
-    <p id="minutes_left"></p>
+    <p id="minutes_left_raw"></p>
+    <p id="minutes_left_processed"></p>
+    <p id="minutes_left_stringified"></p>
 </body>
 </html>
+
