@@ -36,8 +36,10 @@ function refreshData(){
             //it was a choice to name the id's the same as the expected data labels
             //LEARNER GUT CHECK: (data.is_open = true) shows "OPEN" can you explain why?  
             if (data.is_open == "true") {
+                document.body.style.setProperty('--status-color', 'GREEN');
                 document.getElementById('is_open').innerHTML = "OPEN"
             } else {
+                document.body.style.setProperty('--status-color', 'RED');
                 document.getElementById('is_open').innerHTML = "CLOSED"
             }
             
