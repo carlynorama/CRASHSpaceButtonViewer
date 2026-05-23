@@ -12,7 +12,7 @@ DEMO: https://carlynorama.github.io/CRASHSpaceButtonViewer/
 
 Some of the earlier branches failed to test the open condition correctly. 
 
-Changes included fixing the boolean check `if (data.is_open === true) {` and realizing that I wasn't updating the minutes in `var minutes = Math.floor((myInterval % (60 * 24)));`. A reminder of the value of tests and mocks. 
+Changes included fixing the boolean check `if (data.is_open === true) {` and realizing that I wasn't updating the minutes in `stringifyMinutes` at `var minutes = Math.floor((myInterval % (60 * 24)));`. A reminder of the value of tests and mocks. 
 
 ## Technologies Used
 
