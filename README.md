@@ -8,6 +8,8 @@ This is a demo project that fetches the current status of the CRASHSpace button 
 
 A person loading this page should be able to tell at a glance if the space is open, and if so, how much longer it will be open. 
 
+DEMO: https://carlynorama.github.io/CRASHSpaceButtonViewer/
+
 ## Technologies Used
 
 JavaScript, HTML and (CSS, pending).

@@ -33,9 +33,12 @@ function refreshData(){
             lastMinutesLeft = data.minutes_left
 
             document.getElementById('current_date').innerHTML = lastRefresh
+
+ 
             //it was a choice to name the id's the same as the expected data labels
             //LEARNER GUT CHECK: (data.is_open = true) shows "OPEN" can you explain why?  
-            if (data.is_open == "true") {
+            //TODO: add bool check. 
+            if (data.is_open === true) {
                 document.body.style.setProperty('--status-color', 'GREEN');
                 document.getElementById('is_open').innerHTML = "OPEN"
             } else {
