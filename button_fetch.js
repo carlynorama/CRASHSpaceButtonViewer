@@ -43,6 +43,7 @@ function refreshData(){
             
             document.getElementById('minutes_left_raw').innerHTML = lastMinutesLeft
             document.getElementById('minutes_left_processed').innerHTML = lastMinutesLeft
+            document.getElementById('minutes_left_stringified').innerHTML = stringifyMinutes(lastMinutesLeft)
         }
     });
 }
@@ -54,8 +55,10 @@ function updateElapsed() {
         var minutesSinceRefresh = (now - lastRefresh)/(60000)
         var newMinutesLeft  = lastMinutesLeft - minutesSinceRefresh
          document.getElementById('minutes_left_processed').innerHTML = newMinutesLeft
+         document.getElementById('minutes_left_stringified').innerHTML = stringifyMinutes(newMinutesLeft)
     } else {
         document.getElementById('minutes_left_processed').innerHTML = "Waiting..."
+        document.getElementById('minutes_left_stringified').innerHTML = "Waiting"
     }
 }
 
@@ -68,6 +71,7 @@ window.onload = function() {
     refreshData();
     //works no matter the order in the header. 
     helloSecondJSFile("INSIDE window.onload");
+    //this is too fast if really only by minute. 
     setInterval(updateElapsed, 1000);
 }
 

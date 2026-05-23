@@ -34,6 +34,11 @@ function stringifyMinutes(interval) {
     var minutes = 0//Math.floor((myInterval % (60 * 24)) / (60));
 
     let message = days + "d " + hours + "h "  + minutes + "m ";
+    if (negativeNumberFlag) {
+        message = message + " since"
+    }   else {
+        message = message + "until"
+    }
     console.log(message)
     return message;
 }
