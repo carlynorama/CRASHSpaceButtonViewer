@@ -1,0 +1,14 @@
+@property --status-color {
+  syntax: "<color>";
+  /* inherits: false; */
+  initial-value: blue;
+}
+
+/* :root {
+  ----status-color: purple;
+} */
+
+#is_open {
+  text-align: center;
+  color: var(--status-color);
+}
