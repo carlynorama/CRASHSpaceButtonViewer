@@ -20,7 +20,7 @@ function stringifyMinutes(interval) {
     let myInterval = parseFloat(interval)
 
     let negativeNumberFlag = myInterval < 0;
-    console.log("negativeNumberFlag", negativeNumberFlag)
+    //console.log("negativeNumberFlag", negativeNumberFlag)
     
     //mast do this before parse because Math.floor wont work correctly for this on neg numbers
     //compare the following outputs 
@@ -39,7 +39,7 @@ function stringifyMinutes(interval) {
     }   else {
         message = message + "until"
     }
-    console.log(message)
+    //console.log(message)
     return message;
 }
 
@@ -59,6 +59,6 @@ function stringifyInterval(interval) {
     var seconds = Math.floor((myInterval % (1000 * 60)) / 1000);
 
     let message = days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
-    console.log(message)
+    //console.log(message)
     return message;
 }
