@@ -1,6 +1,6 @@
-let callRoute = `https://crashspacela.com/sign/?output=jsonmin`
+let source_url = `https://crashspacela.com/sign/?output=jsonmin`
 
-async function getLatest() {
+async function getLatest(callRoute) {
     console.log(callRoute)
     try {
         const response = await fetch(
@@ -24,6 +24,6 @@ async function getLatest() {
 
 window.onload = function() {
     console.log('script called')
-    getLatest()
+    getLatest(source_url)
 }
 
