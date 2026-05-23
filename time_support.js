@@ -9,6 +9,7 @@ const isNumeric = (num) => (typeof(num) === 'number' || typeof(num) === "string"
 
 
 //takes in a value in minutes, discards any fractional minutes. 
+//20.31666666666667
 function stringifyMinutes(interval) {
     //check if interval is a number
     //TODO: There is a better way to handle errors, make sure this comes in as
@@ -24,14 +25,17 @@ function stringifyMinutes(interval) {
     
     //mast do this before parse because Math.floor wont work correctly for this on neg numbers
     //compare the following outputs 
-    //console.log(days, myInterval / (60  * 24), ~~(myInterval / (60  * 24)), Math.trunc(myInterval / (60  * 24)));
+    //console.log(myInterval / (60  * 24), ~~(myInterval / (60  * 24)), Math.trunc(myInterval / (60  * 24)));
     if (negativeNumberFlag) {
         myInterval = myInterval * -1
+        console.log()
     }
+    //console.log(myInterval / (60  * 24), ~~(myInterval / (60  * 24)), Math.trunc(myInterval / (60  * 24)));
+
 
     var days = Math.floor(myInterval / (60  * 24));
     var hours =  Math.floor((myInterval % (60 * 24)) / (60));
-    var minutes = 0//Math.floor((myInterval % (60 * 24)) / (60));
+    var minutes = Math.floor((myInterval % (60 * 24)));
 
     let message = days + "d " + hours + "h "  + minutes + "m ";
     if (negativeNumberFlag) {
